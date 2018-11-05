@@ -10,4 +10,4 @@ class BrowserService implements IContainerService {
   }
 }
 
-export default BrowserService
+export default new BrowserService()

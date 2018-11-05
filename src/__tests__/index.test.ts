@@ -1,4 +1,4 @@
-import services from '../services'
+import services from '../container-services'
 import ContainerService from '../container-service'
 
 import containerService from '../index'

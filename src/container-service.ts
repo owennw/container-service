@@ -1,4 +1,4 @@
-import { IContainerService } from './services'
+import { IContainerService } from './container-services'
 
 class ContainerService {
   private service: IContainerService

@@ -1,5 +1,5 @@
 import ContainerService from '../container-service'
-import { IContainerService } from '../services'
+import { IContainerService } from '../container-services'
 
 const createMockService = (applies: boolean, start: () => void): IContainerService => ({
   applies: () => applies,

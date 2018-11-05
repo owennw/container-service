@@ -1,0 +1,17 @@
+const mockBrowserService = 'mockBrowserService'
+jest.mock('../browser-service', () => ({
+  default: mockBrowserService,
+}))
+
+const mockOpenFinService = 'mockOpenFinService'
+jest.mock('../openfin-service', () => ({
+  default: mockOpenFinService,
+}))
+
+import services from '../services'
+
+describe('services', () => {
+  it('combines all the services in the correct order', () => {
+    expect(services).toEqual([mockOpenFinService, mockBrowserService])
+  })
+})
