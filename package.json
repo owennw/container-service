@@ -1,0 +1,22 @@
+{
+  "name": "container-service",
+  "version": "0.0.0",
+  "description": "Abstracts a web application's runtime container, to allow it to run on the desktop or in the browser with minimal code change.",
+  "main": "index.js",
+  "repository": "git@github.com:owennw/container-service.git",
+  "author": "Nick Owen <nowen@scottlogic.co.uk>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "devDependencies": {
+    "commitizen": "^3.0.4",
+    "cz-conventional-changelog": "2.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
