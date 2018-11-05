@@ -15,7 +15,8 @@
     "build": "webpack --config ./build/webpack.config.js",
     "lint": "tslint -p ./tsconfig.json",
     "test": "jest",
-    "ci": "yarn lint && yarn test"
+    "cover": "yarn test --coverage",
+    "ci": "yarn lint && yarn cover"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
