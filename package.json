@@ -9,16 +9,20 @@
   "scripts": {
     "commit": "git-cz",
     "build": "webpack --config ./build/webpack.config.js",
-    "lint": "eslint src/",
+    "lint": "tslint -p ./tsconfig.json",
     "ci": "yarn lint"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
     "babel-loader": "^8.0.4",
     "commitizen": "^3.0.4",
     "cz-conventional-changelog": "2.1.0",
-    "eslint": "^5.8.0",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6",
     "webpack": "^4.25.0",
     "webpack-cli": "^3.1.2"
   },
