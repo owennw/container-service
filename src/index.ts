@@ -1,3 +1,5 @@
-const containerService = () => console.log('Hello World!') // tslint:disable-line no-console
+const containerService = {
+  double: (input: number) => input * 2,
+}
 
 export default containerService
