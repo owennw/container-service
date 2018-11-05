@@ -2,17 +2,22 @@
   "name": "container-service",
   "version": "0.0.0",
   "description": "Abstracts a web application's runtime container, to allow it to run on the desktop or in the browser with minimal code change.",
-  "main": "index.js",
   "repository": "git@github.com:owennw/container-service.git",
   "author": "Nick Owen <nowen@scottlogic.co.uk>",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build": "webpack --config ./build/webpack.config.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
     "commitizen": "^3.0.4",
-    "cz-conventional-changelog": "2.1.0"
+    "cz-conventional-changelog": "2.1.0",
+    "webpack": "^4.25.0",
+    "webpack-cli": "^3.1.2"
   },
   "config": {
     "commitizen": {
