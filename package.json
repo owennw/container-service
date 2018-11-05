@@ -8,7 +8,7 @@
   "private": false,
   "scripts": {
     "commit": "git-cz",
-    "clean": "rimraf dist/",
+    "clean": "rimraf lib/",
     "prebuild": "yarn clean",
     "build": "webpack --config ./build/webpack.config.js",
     "lint": "tslint -p ./tsconfig.json",
