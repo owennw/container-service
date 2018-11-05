@@ -1,5 +1,4 @@
-const containerService = {
-  double: (input: number) => input * 2,
-}
+import services from './services'
+import ContainerService from './container-service'
 
-export default containerService
+export default new ContainerService(services)

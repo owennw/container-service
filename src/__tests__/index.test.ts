@@ -1,7 +1,10 @@
+import services from '../services'
+import ContainerService from '../container-service'
+
 import containerService from '../index'
 
 describe('containerService', () => {
-  it('has a double function', () => {
-    expect(containerService.double(5)).toBe(10)
+  it('is constructed with the services', () => {
+    expect(containerService).toEqual(new ContainerService(services))
   })
 })

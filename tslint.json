@@ -4,12 +4,16 @@
     "semicolon": [true, "never"],
     "indent": [true, "spaces", 2],
     "quotemark": [true, "single"],
-    "eofline": false
+    "eofline": false,
+    "arrow-parens": false,
+    "ordered-imports": false
   },
   "jsRules": {
     "semicolon": [true, "never"],
     "indent": [true, "spaces", 2],
     "quotemark": [true, "single"],
-    "eofline": false
+    "eofline": false,
+    "arrow-parens": false,
+    "ordered-imports": false
   }
 }
