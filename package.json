@@ -1,6 +1,8 @@
 {
   "name": "container-service",
   "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "description": "Abstracts a web application's runtime container, to allow it to run on the desktop or in the browser with minimal code change.",
   "repository": "git@github.com:owennw/container-service.git",
   "author": "Nick Owen <owennw@users.noreply.github.com>",
@@ -31,6 +33,7 @@
     "regenerator-runtime": "^0.12.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.4",
+    "ts-loader": "^5.3.0",
     "tslint": "^5.11.0",
     "typescript": "^3.1.6",
     "webpack": "^4.25.0",

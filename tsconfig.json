@@ -8,9 +8,8 @@
     "module": "es6",
     "target": "es5",
     "jsx": "react",
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom"],
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", "**/__tests__/*"]
 }
