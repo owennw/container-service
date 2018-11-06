@@ -4,9 +4,11 @@ import { IContainerStrategy } from '../container-strategies'
 const createMockService = ({
   applies = true,
   start = jest.fn(),
+  maximize = jest.fn(),
 }): IContainerStrategy => ({
   applies: () => applies,
   start,
+  maximize,
 })
 
 describe('Container Service', () => {
@@ -49,5 +51,15 @@ describe('Container Service', () => {
 
     containerService.start()
     expect(mockStart).toHaveBeenCalledTimes(1)
+  })
+
+  it('maximize calls maximize on the service', () => {
+    const mockMaximize = jest.fn()
+    const mockService = createMockService({ maximize: mockMaximize })
+    const containerService = new ContainerService([mockService])
+    expect(mockMaximize).toHaveBeenCalledTimes(0)
+
+    containerService.maximize()
+    expect(mockMaximize).toHaveBeenCalledTimes(1)
   })
 })

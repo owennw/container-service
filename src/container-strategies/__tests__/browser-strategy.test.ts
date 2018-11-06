@@ -8,4 +8,8 @@ describe('browserStrategy', () => {
   it('start does not throw an error', () => {
     browserStrategy.start()
   })
+
+  it('maximize does not throw an error', () => {
+    browserStrategy.maximize()
+  })
 })

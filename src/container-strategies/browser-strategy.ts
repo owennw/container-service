@@ -8,6 +8,10 @@ class BrowserStrategy implements IContainerStrategy {
   public start() {
     // No-op
   }
+
+  public maximize() {
+    // No-op
+  }
 }
 
 const browserStrategy = new BrowserStrategy()
