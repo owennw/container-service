@@ -18,6 +18,10 @@ class OpenFinStrategy implements IContainerStrategy {
   public maximize() {
     this.fin.desktop.Window.getCurrent().maximize()
   }
+
+  public minimize() {
+    this.fin.desktop.Window.getCurrent().minimize()
+  }
 }
 
 export { OpenFinStrategy }

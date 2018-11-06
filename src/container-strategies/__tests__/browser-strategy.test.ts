@@ -12,4 +12,8 @@ describe('browserStrategy', () => {
   it('maximize does not throw an error', () => {
     browserStrategy.maximize()
   })
+
+  it('minimize does not throw an error', () => {
+    browserStrategy.minimize()
+  })
 })

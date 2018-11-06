@@ -24,7 +24,7 @@ describe('OpenFinStrategy', () => {
   })
 
   it('start does not throw an error', () => {
-    const strategy = setup({})
+    setup({})
   })
 
   it('maximize calls the OpenFin API', () => {
@@ -44,5 +44,24 @@ describe('OpenFinStrategy', () => {
     expect(mockMaximize).toHaveBeenCalledTimes(0)
     strategy.maximize()
     expect(mockMaximize).toHaveBeenCalledTimes(1)
+  })
+
+  it('minimize calls the OpenFin API', () => {
+    const mockMinimize = jest.fn()
+    const fin = {
+      desktop: {
+        Window: {
+          getCurrent: () => ({
+            minimize: mockMinimize,
+          }),
+        },
+      },
+    }
+
+    const strategy = setup(fin)
+
+    expect(mockMinimize).toHaveBeenCalledTimes(0)
+    strategy.minimize()
+    expect(mockMinimize).toHaveBeenCalledTimes(1)
   })
 })

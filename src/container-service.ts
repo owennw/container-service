@@ -3,6 +3,7 @@ import { IContainerStrategy } from './container-strategies'
 interface IContainerService {
   start(): void
   maximize(): void
+  minimize(): void
 }
 
 class ContainerService implements IContainerService {
@@ -18,6 +19,10 @@ class ContainerService implements IContainerService {
 
   public maximize() {
     this.strategy.maximize()
+  }
+
+  public minimize() {
+    this.strategy.minimize()
   }
 }
 
