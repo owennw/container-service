@@ -1,4 +1,6 @@
-import OpenFinService from './openfin-service'
-import getOpenFin from './fin'
+import { OpenFinService } from './openfin-service'
+import { getOpenFin } from './fin'
 
-export default new OpenFinService(getOpenFin())
+const openFinService = new OpenFinService(getOpenFin())
+
+export { openFinService }

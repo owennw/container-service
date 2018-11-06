@@ -3,4 +3,4 @@ interface IContainerService {
   start(): void
 }
 
-export default IContainerService
+export { IContainerService }

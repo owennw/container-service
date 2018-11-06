@@ -1,6 +1,4 @@
-import IContainerService from './container-service'
+import { IContainerService } from './container-service'
+import { services } from './services'
 
-import services from './services'
-
-export default services
-export { IContainerService }
+export { services, IContainerService }

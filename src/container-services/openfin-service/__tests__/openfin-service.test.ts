@@ -1,4 +1,4 @@
-import OpenFinService from '../openfin-service'
+import { OpenFinService } from '../openfin-service'
 
 describe('OpenFinService', () => {
   describe('applies', () => {

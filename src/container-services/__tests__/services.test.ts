@@ -1,14 +1,14 @@
 const mockBrowserService = 'mockBrowserService'
 jest.mock('../browser-service', () => ({
-  default: mockBrowserService,
+  browserService: mockBrowserService,
 }))
 
 const mockOpenFinService = 'mockOpenFinService'
 jest.mock('../openfin-service', () => ({
-  default: mockOpenFinService,
+  openFinService: mockOpenFinService,
 }))
 
-import services from '../services'
+import { services } from '../services'
 
 describe('services', () => {
   it('combines all the services in the correct order', () => {

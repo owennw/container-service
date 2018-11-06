@@ -1,4 +1,4 @@
-import IContainerService from '../container-service'
+import { IContainerService } from '../container-service'
 
 class OpenFinService implements IContainerService {
   private fin: any
@@ -16,4 +16,4 @@ class OpenFinService implements IContainerService {
   }
 }
 
-export default OpenFinService
+export { OpenFinService }

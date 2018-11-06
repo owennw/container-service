@@ -12,4 +12,4 @@ class ContainerService {
   }
 }
 
-export default ContainerService
+export { ContainerService }

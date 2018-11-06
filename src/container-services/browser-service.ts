@@ -1,4 +1,4 @@
-import IContainerService from './container-service'
+import { IContainerService } from './container-service'
 
 class BrowserService implements IContainerService {
   public applies() {
@@ -10,4 +10,6 @@ class BrowserService implements IContainerService {
   }
 }
 
-export default new BrowserService()
+const browserService = new BrowserService()
+
+export { browserService }

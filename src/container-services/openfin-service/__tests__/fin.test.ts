@@ -2,7 +2,7 @@ const globalAny: any = global
 
 const originalFin = globalAny.fin
 
-import getOpenFin from '../fin'
+import { getOpenFin } from '../fin'
 
 describe('getOpenFin', () => {
   afterEach(() => {

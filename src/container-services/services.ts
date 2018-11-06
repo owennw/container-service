@@ -1,11 +1,11 @@
-import IContainerService from './container-service'
+import { IContainerService } from './container-service'
 
-import BrowserService from './browser-service'
-import OpenFinService from './openfin-service'
+import { openFinService } from './openfin-service'
+import { browserService } from './browser-service'
 
 const services: IContainerService[] = [
-  OpenFinService,
-  BrowserService,
+  openFinService,
+  browserService,
 ]
 
-export default services
+export { services }

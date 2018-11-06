@@ -1,4 +1,4 @@
-import browserService from '../browser-service'
+import { browserService } from '../browser-service'
 
 describe('BrowserService', () => {
   it('applies returns true', () => {

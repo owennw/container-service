@@ -1,7 +1,7 @@
-import services from '../container-services'
-import ContainerService from '../container-service'
+import { services} from '../container-services'
+import { ContainerService } from '../container-service'
 
-import containerService from '../index'
+import { containerService } from '../index'
 
 describe('containerService', () => {
   it('is constructed with the services', () => {
