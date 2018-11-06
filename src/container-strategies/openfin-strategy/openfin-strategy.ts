@@ -1,5 +1,7 @@
 import { IContainerStrategy } from '../container-strategy'
 
+const getCurrentWindow = fin => fin.desktop.Window.getCurrent()
+
 class OpenFinStrategy implements IContainerStrategy {
   private readonly fin: any
 
@@ -16,11 +18,11 @@ class OpenFinStrategy implements IContainerStrategy {
   }
 
   public maximize() {
-    this.fin.desktop.Window.getCurrent().maximize()
+    getCurrentWindow(this.fin).maximize()
   }
 
   public minimize() {
-    this.fin.desktop.Window.getCurrent().minimize()
+    getCurrentWindow(this.fin).minimize()
   }
 }
 

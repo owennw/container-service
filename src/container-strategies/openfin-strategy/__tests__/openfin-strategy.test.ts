@@ -1,5 +1,13 @@
 import { OpenFinStrategy } from '../openfin-strategy'
 
+const createFin = currentWindow => ({
+  desktop: {
+    Window: {
+      getCurrent: () => currentWindow,
+    },
+  },
+})
+
 const setup = fin => {
   const strategy = new OpenFinStrategy(fin)
 
@@ -29,15 +37,11 @@ describe('OpenFinStrategy', () => {
 
   it('maximize calls the OpenFin API', () => {
     const mockMaximize = jest.fn()
-    const fin = {
-      desktop: {
-        Window: {
-          getCurrent: () => ({
-            maximize: mockMaximize,
-          }),
-        },
-      },
+    const currentWindow = {
+      maximize: mockMaximize,
     }
+
+    const fin = createFin(currentWindow)
 
     const strategy = setup(fin)
 
@@ -48,15 +52,11 @@ describe('OpenFinStrategy', () => {
 
   it('minimize calls the OpenFin API', () => {
     const mockMinimize = jest.fn()
-    const fin = {
-      desktop: {
-        Window: {
-          getCurrent: () => ({
-            minimize: mockMinimize,
-          }),
-        },
-      },
+    const currentWindow = {
+      minimize: mockMinimize,
     }
+
+    const fin = createFin(currentWindow)
 
     const strategy = setup(fin)
 
