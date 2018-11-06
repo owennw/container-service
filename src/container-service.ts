@@ -1,6 +1,10 @@
 import { IContainerStrategy } from './container-strategies'
 
-class ContainerService {
+interface IContainerService {
+  start(): void
+}
+
+class ContainerService implements IContainerService {
   private readonly strategy: IContainerStrategy
 
   constructor(strategies: IContainerStrategy[]) {
@@ -12,4 +16,4 @@ class ContainerService {
   }
 }
 
-export { ContainerService }
+export { ContainerService, IContainerService }

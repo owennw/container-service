@@ -1,6 +1,7 @@
-interface IContainerStrategy {
+import { IContainerService } from '../container-service'
+
+interface IContainerStrategy extends IContainerService {
   applies(): boolean
-  start(): void
 }
 
 export { IContainerStrategy }
