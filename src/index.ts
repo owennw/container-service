@@ -1,6 +1,6 @@
-import { services } from './container-services'
+import { strategies } from './container-strategies'
 import { ContainerService } from './container-service'
 
-const containerService = new ContainerService(services)
+const containerService = new ContainerService(strategies)
 
 export { containerService }

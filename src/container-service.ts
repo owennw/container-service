@@ -1,14 +1,14 @@
-import { IContainerService } from './container-services'
+import { IContainerStrategy } from './container-strategies'
 
 class ContainerService {
-  private service: IContainerService
+  private readonly strategy: IContainerStrategy
 
-  constructor(services: IContainerService[]) {
-    this.service = services.find(s => s.applies())
+  constructor(strategies: IContainerStrategy[]) {
+    this.strategy = strategies.find(s => s.applies())
   }
 
   public start() {
-    this.service.start()
+    this.strategy.start()
   }
 }
 

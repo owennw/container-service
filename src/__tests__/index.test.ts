@@ -1,10 +1,10 @@
-import { services} from '../container-services'
+import { strategies} from '../container-strategies'
 import { ContainerService } from '../container-service'
 
 import { containerService } from '../index'
 
 describe('containerService', () => {
-  it('is constructed with the services', () => {
-    expect(containerService).toEqual(new ContainerService(services))
+  it('is constructed with the strategies', () => {
+    expect(containerService).toEqual(new ContainerService(strategies))
   })
 })
