@@ -1,8 +1,8 @@
 {
   "name": "container-service",
   "version": "0.0.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "description": "Abstracts a web application's runtime container, to allow it to run on the desktop or in the browser with minimal code change.",
   "repository": "git@github.com:owennw/container-service.git",
   "author": "Nick Owen <owennw@users.noreply.github.com>",
@@ -10,9 +10,9 @@
   "private": false,
   "scripts": {
     "commit": "git-cz",
-    "clean": "rimraf lib/",
+    "clean": "rimraf dist/",
     "prebuild": "yarn clean",
-    "build": "webpack --config ./build/webpack.config.js",
+    "build": "webpack",
     "lint": "tslint -p ./tsconfig.json",
     "test": "jest",
     "cover": "yarn test --coverage",
