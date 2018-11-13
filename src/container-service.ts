@@ -1,7 +1,7 @@
 import { IContainerStrategy } from './container-strategies'
 
 interface IContainerService {
-  start(): void
+  start(): Promise<void>
   maximize(): void
   minimize(): void
 }
@@ -13,7 +13,7 @@ class ContainerService implements IContainerService {
     this.strategy = strategies.find(s => s.applies())
   }
 
-  public start() {
+  public async start() {
     this.strategy.start()
   }
 

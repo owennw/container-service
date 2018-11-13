@@ -5,8 +5,8 @@ class BrowserStrategy implements IContainerStrategy {
     return true
   }
 
-  public start() {
-    // No-op
+  public async start() {
+    // No op
   }
 
   public maximize() {

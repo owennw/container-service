@@ -13,6 +13,12 @@ const createMockService = ({
   minimize,
 })
 
+const startService = async mockService => {
+  const service = new ContainerService([mockService])
+  await service.start()
+  return service
+}
+
 describe('Container Service', () => {
   describe('selecting the strategy', () => {
     const service1Applies = false
@@ -28,50 +34,52 @@ describe('Container Service', () => {
       service2Start.mockReset()
     })
 
-    it('selects the first strategy that applies (1)', () => {
+    it('selects the first strategy that applies (1)', async () => {
       const containerService = new ContainerService([mockService1, mockService2])
-      containerService.start()
+      await containerService.start()
 
       expect(service1Start).toHaveBeenCalledTimes(0)
       expect(service2Start).toHaveBeenCalledTimes(1)
     })
 
-    it('selects the first strategy that applies (2)', () => {
+    it('selects the first strategy that applies (2)', async () => {
       const containerService = new ContainerService([mockService2, mockService1])
-      containerService.start()
+      await containerService.start()
 
       expect(service1Start).toHaveBeenCalledTimes(0)
       expect(service2Start).toHaveBeenCalledTimes(1)
     })
   })
 
-  it('start calls start on the service', () => {
+  it('start calls start on the service', async () => {
     const mockStart = jest.fn()
     const mockService = createMockService({ start: mockStart })
     const containerService = new ContainerService([mockService])
     expect(mockStart).toHaveBeenCalledTimes(0)
 
-    containerService.start()
+    await containerService.start()
     expect(mockStart).toHaveBeenCalledTimes(1)
   })
 
-  it('maximize calls maximize on the service', () => {
+  it('maximize calls maximize on the service', async () => {
     const mockMaximize = jest.fn()
     const mockService = createMockService({ maximize: mockMaximize })
-    const containerService = new ContainerService([mockService])
+    const service = await startService(mockService)
+
     expect(mockMaximize).toHaveBeenCalledTimes(0)
 
-    containerService.maximize()
+    service.maximize()
     expect(mockMaximize).toHaveBeenCalledTimes(1)
   })
 
-  it('minimize calls maximize on the service', () => {
+  it('minimize calls maximize on the service', async () => {
     const mockMinimize = jest.fn()
     const mockService = createMockService({ minimize: mockMinimize })
-    const containerService = new ContainerService([mockService])
+    const service = await startService(mockService)
+
     expect(mockMinimize).toHaveBeenCalledTimes(0)
 
-    containerService.minimize()
+    service.minimize()
     expect(mockMinimize).toHaveBeenCalledTimes(1)
   })
 })

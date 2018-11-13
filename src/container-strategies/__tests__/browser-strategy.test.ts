@@ -5,8 +5,8 @@ describe('browserStrategy', () => {
     expect(browserStrategy.applies()).toBe(true)
   })
 
-  it('start does not throw an error', () => {
-    browserStrategy.start()
+  it('start does nothing', async () => {
+    await browserStrategy.start()
   })
 
   it('maximize does not throw an error', () => {

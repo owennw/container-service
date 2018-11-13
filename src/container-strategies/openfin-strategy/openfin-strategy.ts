@@ -13,8 +13,8 @@ class OpenFinStrategy implements IContainerStrategy {
     return !!this.fin
   }
 
-  public start() {
-    // No-op
+  public async start() {
+    return new Promise<void>(resolve => this.fin.desktop.main(() => resolve()))
   }
 
   public maximize() {
